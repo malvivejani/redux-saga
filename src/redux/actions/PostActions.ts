@@ -21,14 +21,14 @@ export const fetchPostFailure = (error: any) => {
     }
 }
 
-export const fetchPosts = () => {
-    return (dispatch: any) => {
-        dispatch(fetchPostRequest());
-        axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
-            const post = response.data;
-            dispatch(fetchPostSuccess(post));
-        }).catch(error => {
-            dispatch(fetchPostFailure(error))
-        });
-    }
-}
+// export const fetchPosts = () => {
+//     return (dispatch: any) => {
+//         dispatch(fetchPostRequest());
+//         axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
+//             const post = response.data;
+//             dispatch(fetchPostSuccess(post));
+//         }).catch(error => {
+//             dispatch(fetchPostFailure(error))
+//         });
+//     }
+// }

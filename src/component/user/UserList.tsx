@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { fetchUser } from '../../redux/actions/UserActions';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import { userListRequest } from '../../redux/actions/UserActions';
 
 function UserList(props: any) {
-    const user = useSelector((state: any) => state.userList);
     const dispatch = useDispatch();
+    const user = useSelector((state: any) => state.userList);
 
+    console.log("user---saga--response", user)
     useEffect(() => {
-        dispatch(fetchUser())
+        dispatch(userListRequest())
     }, []);
 
     return (

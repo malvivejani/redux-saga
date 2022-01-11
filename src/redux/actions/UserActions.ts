@@ -21,17 +21,3 @@ export const userListFailure = (error: any) => {
         payload: error
     }
 };
-
-//call to API - redux-thunk
-export const fetchUser = () => {
-    return (dispatch: any) => {
-        dispatch(userListRequest())
-        axios.get('https://jsonplaceholder.typicode.com/users').then(response => {
-            const users = response.data;
-            dispatch(userListSuccess(users))
-        }).catch(error => {
-            const errmsg = error.message;
-            dispatch(userListFailure(errmsg))
-        })
-    }
-}
